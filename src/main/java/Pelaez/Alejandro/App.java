@@ -8,10 +8,15 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args)
     {
-        System.out.print("What is your name?");
+        System.out.print("Enter length: ");
         Scanner input = new Scanner(System.in);
-        String name = input.next();
-        System.out.print("Hello " + name + ", nice to meet you!");
-        System.out.print("\n");
+        float l = input.nextFloat();
+        System.out.print("Enter width: ");
+        float w = input.nextFloat();
+        final int area = Math.round(l * w);
+        int paint = area / 350;
+        if (area % 350 != 0)
+            paint++;
+        System.out.println("You will need to purchase " + paint + " gallons of paint to cover " + area + " sq ft.");
     }
 }
